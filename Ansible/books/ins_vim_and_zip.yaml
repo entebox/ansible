@@ -1,0 +1,11 @@
+- hosts: all
+  become: yes
+  tasks:
+  - name: Ansible apt with_items
+    apt:
+     name: "{{ item }}"
+     update_cache: true
+     state: present
+    with_items:
+     - 'zip'
+     - 'vim'

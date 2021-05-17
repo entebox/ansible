@@ -1,0 +1,7 @@
+---
+# tasks file for deploy
+- name: add lines to the file
+  copy:
+    dest: "/tmp/test1.txt"
+    content: |
+      Hello World

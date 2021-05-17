@@ -1,0 +1,10 @@
+---
+# tasks file for common
+- name: Install vim and zip
+  become: yes
+  apt:
+    pkg:
+     - zip
+     - vim
+    update_cache: true
+    state: present
