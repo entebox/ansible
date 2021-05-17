@@ -1,11 +1,7 @@
+---
 - hosts: all
-  become: yes
+  become: true
   tasks:
-  - name: Ansible apt with_items
-    apt:
-     name: "{{ item }}"
-     update_cache: true
-     state: present
-    with_items:
-     - 'zip'
-     - 'vim'
+    - name: install zip and vim
+      apt: name={{ item }} state=latest update_cache=yes
+      loop: [ 'vim', 'zip' ]
